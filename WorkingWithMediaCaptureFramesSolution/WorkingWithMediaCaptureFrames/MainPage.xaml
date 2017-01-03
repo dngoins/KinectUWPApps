@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="WorkingWithMediaCaptureFrames.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WorkingWithMediaCaptureFrames"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel  Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock >External Cameras View:</TextBlock>
+            <Image x:Name="imgView" Stretch="UniformToFill" MaxWidth="600" ></Image>
+            <Button x:Name="btnExternalCapture" HorizontalAlignment="Right" Click="btnExternalCapture_Click">Save External Camera Shot</Button>
+            <TextBlock>FilePath:</TextBlock>
+            <TextBox x:Name="fileLocation" TextWrapping="Wrap"  />
+
+        </StackPanel>
+    </Grid>
+</Page>
