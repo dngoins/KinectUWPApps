@@ -21,10 +21,9 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 
-
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace WorkingWithMediaCaptureFrames
+namespace KinectCameraFeed
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -51,20 +50,24 @@ namespace WorkingWithMediaCaptureFrames
         const int BODY_SOURCE = 4;
         const int BODY_INDEX_SOURCE = 5;
 
-       
+
         // UWP BitmapSource
         private SoftwareBitmapSource source = new SoftwareBitmapSource();
 
         // Xaml Bitmap for updating bitmaps in Xaml
         private WriteableBitmap extBitmap;
-        
 
         public MainPage()
         {
+            
             this.InitializeComponent();
             this.InitializeColorFrames();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+        }
         async void InitializeColorFrames()
         {
             // Devices come grouped together as a set of capabilities
@@ -73,8 +76,8 @@ namespace WorkingWithMediaCaptureFrames
 
             // Let's filter using Linq, based on a device group with a DisplayName of "Kinect"
             var eligibleColorGroups = allGroups
-                .Where(g => g.SourceInfos.FirstOrDefault(info => info.SourceGroup.DisplayName.Contains("Kinect") ) != null).ToList();
- 
+                .Where(g => g.SourceInfos.FirstOrDefault(info => info.SourceGroup.DisplayName.Contains("Kinect")) != null).ToList();
+
             // Check to see if we found a device
             if (eligibleColorGroups.Count == 0)
             {
@@ -114,15 +117,15 @@ namespace WorkingWithMediaCaptureFrames
 
                     // Listen for Frame Arrived events
                     frameReader.FrameArrived += FrameReader_FrameArrived;
-                    
+
                     // Start the color source frame processing
                     MediaFrameReaderStartStatus status = await frameReader.StartAsync();
 
                     // Status checking for logging purposes if needed
                     if (status != MediaFrameReaderStartStatus.Success)
                     {
-              
-                      }
+
+                    }
                 }
                 else
                 {
@@ -140,19 +143,19 @@ namespace WorkingWithMediaCaptureFrames
 
 
 
-        private void ProcessColorFrame(MediaFrameReference  clrFrame)
+        private void ProcessColorFrame(MediaFrameReference clrFrame)
         {
             try
             {
                 //clrFrame.
                 var buffFrame = clrFrame?.BufferMediaFrame;
-                
+
                 // Get the Individual color Frame
                 var vidFrame = clrFrame?.VideoMediaFrame;
                 {
                     if (vidFrame == null) return;
 
-                    
+
                     // create a UWP SoftwareBitmap and copy Color Frame into Bitmap
                     SoftwareBitmap sbt = new SoftwareBitmap(vidFrame.SoftwareBitmap.BitmapPixelFormat, vidFrame.SoftwareBitmap.PixelWidth, vidFrame.SoftwareBitmap.PixelHeight);
                     vidFrame.SoftwareBitmap.CopyTo(sbt);
@@ -160,7 +163,7 @@ namespace WorkingWithMediaCaptureFrames
                     // PixelFormat needs to be in 8bit BGRA for Xaml writable bitmap
                     if (sbt.BitmapPixelFormat != BitmapPixelFormat.Bgra8)
                         sbt = SoftwareBitmap.Convert(vidFrame.SoftwareBitmap, BitmapPixelFormat.Bgra8);
-                    
+
                     if (source != null)
                     {
                         // To write out to writable bitmap which will be used with ImageElement, it needs to run
@@ -195,11 +198,11 @@ namespace WorkingWithMediaCaptureFrames
 
 
         private void FrameReader_FrameArrived(MediaFrameReader sender, MediaFrameArrivedEventArgs args)
-        {            
+        {
             // Try to get the FrameReference
             using (var frameRef = sender.TryAcquireLatestFrame())
             {
-                if(frameRef != null)
+                if (frameRef != null)
                 {
                     if (frameRef.SourceKind == MediaFrameSourceKind.Color)
                     {
@@ -226,7 +229,7 @@ namespace WorkingWithMediaCaptureFrames
             var settings = new MediaCaptureInitializationSettings
             {
                 SourceGroup = sourceGroup,
-                
+
                 // This media capture can share streaming with other apps.
                 SharingMode = MediaCaptureSharingMode.SharedReadOnly,
 
@@ -252,12 +255,12 @@ namespace WorkingWithMediaCaptureFrames
                 using (var mediaCapture = _mediaCapture)
                 {
                     _mediaCapture = null;
-                    
+
                 }
             }
         }
 
-       
+
 
         private async Task<StorageFile> WriteableBitmapToStorageFile(WriteableBitmap WB, FileFormat fileFormat, string fileName = "")
         {

@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraFeed", "KinectCameraFeed\CameraFeed.csproj", "{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectCameraFeed.VoiceCommandService", "KinectCameraFeed.VoiceCommandService\KinectCameraFeed.VoiceCommandService.csproj", "{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|ARM.Build.0 = Debug|ARM
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|ARM.Deploy.0 = Debug|ARM
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|x64.ActiveCfg = Debug|x64
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|x64.Build.0 = Debug|x64
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|x64.Deploy.0 = Debug|x64
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|x86.ActiveCfg = Debug|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|x86.Build.0 = Debug|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Debug|x86.Deploy.0 = Debug|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|Any CPU.ActiveCfg = Release|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|ARM.ActiveCfg = Release|ARM
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|ARM.Build.0 = Release|ARM
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|ARM.Deploy.0 = Release|ARM
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|x64.ActiveCfg = Release|x64
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|x64.Build.0 = Release|x64
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|x64.Deploy.0 = Release|x64
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|x86.ActiveCfg = Release|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|x86.Build.0 = Release|x86
+		{4639E37E-E7DD-4EEC-8A5C-BD825A1DF23B}.Release|x86.Deploy.0 = Release|x86
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|ARM.ActiveCfg = Debug|ARM
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|ARM.Build.0 = Debug|ARM
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|x64.ActiveCfg = Debug|x64
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|x64.Build.0 = Debug|x64
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|x86.ActiveCfg = Debug|x86
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Debug|x86.Build.0 = Debug|x86
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|ARM.ActiveCfg = Release|ARM
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|ARM.Build.0 = Release|ARM
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|x64.ActiveCfg = Release|x64
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|x64.Build.0 = Release|x64
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|x86.ActiveCfg = Release|x86
+		{28D5BD55-4507-4970-BA51-E6B9BAB2AEC6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="KinectCameraFeedCommandSet_en-us">
+    <AppName>Camera Feed</AppName>
+    <Example>Tell me who is in my room </Example>
+
+    <Command Name="whoIsInMyRoom">
+      <Example> Who is in my room </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">who is in my {location} </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified">[use] [the] {builtin:AppName} to tell me who is in my {location} </ListenFor>
+      <Feedback>Using cameras to monitor {location} </Feedback>      
+      <VoiceCommandService Target="CameraFeedVoiceCommandService"/>
+    </Command>
+    
+    <PhraseList Label="location">
+      <Item>room</Item>
+      <Item>office</Item>
+      <Item>garage</Item>      
+    </PhraseList>
+  </CommandSet>
+
+  
+</VoiceCommands>
